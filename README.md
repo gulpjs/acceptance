@@ -1,15 +1,15 @@
 ## Acceptance tests
 
-This is the scoring system for plugins.
+This is the scoring system for plugins. There may be exceptions in certain edge cases, but this should provide enough feedback to keep people on the right track.
 
 ### Dependencies
 
-| Package | Exceptions | Deductions | Reason | Recommended Solution |
-|---|---|---|---|---|
-| gulp | None | 10 | Creates incompatible plugins. | Don't do this. Use vinyl for your tests. |
-| colors | None | 5 | Extends global prototypes | Use chalk |
-| through | None | 1 | Old streams | Use through2 |
-| event-stream | devDependency | 1 | Old streams | Use through2 |
+| Package | Deductions | Reason | Recommended Solution |
+|---|---|---|---|
+| gulp | 10 | Creates incompatible plugins. | Don't do this. Use vinyl for your tests. |
+| colors | 5 | Extends global prototypes | Use chalk |
+| through | 1 | Old streams | Use through2 |
+| event-stream |  1 | Old streams + bloated kitchen sink | Use through2 or other streams2 pattern libraries |
 
 ### Handling file.contents
 
@@ -19,8 +19,18 @@ This is the scoring system for plugins.
 | file with null contents was mutated | 1 | Pass them through immediately - do not modify them |
 | file output contents type different than input | 10 | Put out the same type you put in |
 
-### Logging
+### Static analysis
 
 | Behavior | Deductions | Recommended Solution |
 |---|---|---|
-| console.log in source code | 5 | Use gulp-util .log |
+| console.log | 5 | Use gulp-util .log |
+| require('fs') | 5 | Plugins should not read/write - gulp handles that |
+| index.js > 100 lines | 5 | Break it up into multiple modules/files |
+| High code complexity | 0 | Break it up into multiple modules/files |
+
+### Other
+
+| Behavior | Deductions | Recommended Solution |
+|---|---|---|
+| Tests failing | 1 | Fix your tests |
+| No tests | 5 | Write tests |
