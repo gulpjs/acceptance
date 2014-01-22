@@ -6,7 +6,7 @@ This is the scoring system for plugins. There may be exceptions in certain edge 
 
 | Package | Deductions | Reason | Recommended Solution |
 |---|---|---|---|
-| gulp | 10 | Creates incompatible plugins. | Don't do this. Use vinyl for your tests. |
+| gulp | 10 | Creates incompatible plugins | Don't do this. Use vinyl for your tests. |
 | colors | 5 | Extends global prototypes | Use chalk |
 | through | 1 | Old streams | Use through2 |
 | event-stream |  1 | Old streams + bloated kitchen sink | Use through2 or other streams2 pattern libraries |
