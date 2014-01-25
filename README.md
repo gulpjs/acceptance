@@ -45,3 +45,4 @@ Plugins will be manually checked and deductions will result from the following i
 * Excess configuration
 * Duplication of functionality already existing in another plugin
 * Aggregating multiple `gulpplugins`
+* Poorly documented
