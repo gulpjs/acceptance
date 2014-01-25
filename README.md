@@ -35,3 +35,14 @@ This is the scoring system for plugins. There may be exceptions in certain edge 
 |---|---|---|
 | Tests failing | 1 | Fix your tests |
 | No tests | 5 | Write tests |
+
+### Manual
+
+Plugins will be manually checked and deductions will result from the following items.
+
+* Can be done with existing node modules (doesn't need to be a plugin)
+* Doing multiple things in a plugin
+* Excess configuration
+* Duplication of functionality already existing in another plugin
+* Aggregating multiple `gulpplugins`
+* Poorly documented
