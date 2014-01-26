@@ -18,7 +18,7 @@ This is the scoring system for plugins. There may be exceptions in certain edge 
 | file with null contents not passed through | 1 | Pass them through immediately |
 | file with null contents was mutated | 1 | Pass them through immediately - do not modify them |
 | file output contents type different than input | 10 | Put out the same type you put in |
-| file with streaming contents not handled correctly | 10 | Throw an errror or support it |
+| file with streaming contents not handled correctly | 10 | Emit an error or support it |
 
 ### Static analysis
 
