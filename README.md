@@ -35,6 +35,7 @@ This is the scoring system for plugins. There may be exceptions in certain edge 
 |---|---|---|
 | Tests failing | 1 | Fix your tests |
 | No tests | 5 | Write tests |
+| No source link | 5 | [package.json link](https://www.npmjs.org/doc/json.html#repository) to github |
 
 ### Manual
 
